@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos com Firebase e Autenticação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+
+    
+    <div class="container">
+        <!-- Container de autenticação -->
+        <div id="authContainer" class="form-container">
+            <h1>Login</h1>
+            <form id="formLogin">
+                <input type="email" id="inputEmail" placeholder="E-mail" required>
+                <input type="password" id="inputSenha" placeholder="Senha" required>
+                <button type="submit">Login</button>
+            </form>
+            <button id="botaoCadastro">Cadastrar Novo Usuário</button>
+        </div>
+
+
+
+
+        <!-- Container de CRUD de eventos -->
+        <div id="crudContainer" style="display: none;">
+
+            <button id="botaoLogout">Logout</button>
+
+
+
+
+
+            <nav>
+                <button onclick="exibirSecao('eventos')">Eventos</button>
+                <button onclick="exibirSecao('contas')">Contas</button>
+            </nav>
+
+            <section id="eventos" style="display:none;">
+            </section>
+
+            <section id="contas" style="display:none;">
+
+                <h1>Eventos Pendentes</h1>
+                <p><button id="botaoAdicionarEvento">+</button></p>
+    
+                <div id="containerEventos" class="event-container"></div>
+
+            </section>
+            
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar Eventos -->
+    <div id="modalAdicionar" class="modal">
+        <div class="modal-content">
+            <span class="close" id="fecharModal">&times;</span>
+            <h1>Preencha as informações do evento</h1>
+            <form id="formEventoModal">
+                <input type="text" id="inputNome" placeholder="Nome do evento" required>
+                <input type="text" id="inputDescricao" placeholder="Descrição" required>
+                <table width="100%">
+                    <tr>
+                        <td width="50%"><input type="date" id="inputData" required></td>
+                        <td width="50%"><input type="time" id="inputHorario" required></td>
+                    </tr>
+                </table>
+                <input type="url" id="inputLocal" placeholder="Local (URL)" required>
+                <input type="text" id="inputParticipantes" placeholder="Participantes (separados por vírgula)" required>
+                <select id="inputPrioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                <button type="submit">Adicionar Evento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Edição de Eventos -->
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Editar Evento</h1>
+            <form id="formEditEvento">
+                <input type="hidden" id="inputEventoId">
+                <input type="text" id="inputEditNome" placeholder="Nome do Evento" required>
+                <input type="text" id="inputEditDescricao" placeholder="Descrição do Evento" required>
+                <input type="date" id="inputEditData" required>
+                <input type="time" id="inputEditHorario" required>
+                <input type="text" id="inputEditLocal" placeholder="Local do Evento" required>
+                <input type="text" id="inputEditParticipantes" placeholder="Participantes (separados por vírgula)">
+                <select id="inputEditPrioridade" name="prioridade">
+                    <option value="Alta">Prioridade Alta</option>
+                    <option value="Média">Prioridade Média</option>
+                    <option value="Baixa">Prioridade Baixa</option>
+                </select>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+
+</body>
+</html>
