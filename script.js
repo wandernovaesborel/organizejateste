@@ -98,6 +98,29 @@ window.addEventListener('click', function (event) {
     }
 });
 
+// Função para adicionar apelido
+document.getElementById('formApelidoModal').addEventListener('submit', async function (apelido) {
+    evento.preventDefault();
+
+    const apelido = document.getElementById('inputApelido').value;
+
+    console.log('Adicionando apelido:', { apelido });
+
+    try {
+        await addDoc(collection(db, 'apelidos'), {
+            apelido,
+            usuarioId: usuarioAtual
+        });
+        alert('Apelido cadastrado com sucesso!');
+        document.getElementById('formApelidoModal').reset();
+        carregarEventos(); // Atualiza a lista de eventos
+        document.getElementById('modalApelido').style.display = 'none'; // Fecha o modal
+    } catch (erro) {
+        console.error('Erro ao cadastrar apelido:', erro);
+        alert('Erro ao cadastrar apelido. Tente novamente mais tarde.');
+    }
+});
+
 // Função para adicionar evento
 document.getElementById('formEventoModal').addEventListener('submit', async function (evento) {
     evento.preventDefault();
