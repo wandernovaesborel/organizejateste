@@ -25,44 +25,27 @@
             <button id="botaoCadastro">Cadastrar Novo Usuário</button>
         </div>
 
-
-
-
         <!-- Container de CRUD de eventos -->
         <div id="crudContainer" style="display: none;">
 
             <button id="botaoLogout">Logout</button>
+            <p><button id="cadastrarApelido">Apelido</button></p>
+            <p><button id="botaoAdicionarEvento">+</button></p>
+            <h1>Eventos Pendentes</h1>
 
+            <div id="containerEventos" class="event-container"></div>
+        </div>
+    </div>
 
-
-
-
-            <nav>
-                <button onclick="exibirSecao('eventos')">Eventos</button>
-                <button onclick="exibirSecao('contas')">Contas</button>
-            </nav>
-
-            <section id="eventos" style="display:none;">
-            </section>
-
-            <section id="contas" style="display:none;">
-
-                <h1>Eventos Pendentes</h1>
-                <p><button id="botaoAdicionarEvento">+</button></p>
-    
-                <div id="containerEventos" class="event-container"></div>
-
-            </section>
-            
-
-
-
-
-
-
-
-
-
+    <!-- Modal para Adicionar Apelido -->
+    <div id="modalApelido" class="modal">
+        <div class="modal-content">
+            <span class="close" id="fecharModal">&times;</span>
+            <h1>Preencha as informações do evento</h1>
+            <form id="formApelidoModal">
+                <input type="text" id="inputApelido" placeholder="Digite seu apelido" required>
+                <button type="submit">Adicionar Apelido</button>
+            </form>
         </div>
     </div>
 
