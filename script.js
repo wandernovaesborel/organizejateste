@@ -98,9 +98,36 @@ window.addEventListener('click', function (event) {
     }
 });
 
+
+
+
+
+// Exibir o modal
+document.getElementById('cadastrarApelido').addEventListener('click', function () {
+    document.getElementById('modalApelido').style.display = 'block';
+});
+
+// Fechar o modal
+document.getElementById('fecharModal').addEventListener('click', function () {
+    document.getElementById('modalApelido').style.display = 'none';
+});
+
+// Fechar o modal ao clicar fora dele
+window.addEventListener('click', function (nickname) {
+    const modal = document.getElementById('modalApelido');
+    if (nickname.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+
+
+
+
+
 // Função para adicionar apelido
-document.getElementById('formApelidoModal').addEventListener('submit', async function (apelido) {
-    evento.preventDefault();
+document.getElementById('formApelidoModal').addEventListener('submit', async function (eventoapelido) {
+    eventoapelido.preventDefault();
 
     const apelido = document.getElementById('inputApelido').value;
 
@@ -112,8 +139,6 @@ document.getElementById('formApelidoModal').addEventListener('submit', async fun
             usuarioId: usuarioAtual
         });
         alert('Apelido cadastrado com sucesso!');
-        document.getElementById('formApelidoModal').reset();
-        carregarEventos(); // Atualiza a lista de eventos
         document.getElementById('modalApelido').style.display = 'none'; // Fecha o modal
     } catch (erro) {
         console.error('Erro ao cadastrar apelido:', erro);
@@ -311,9 +336,9 @@ async function carregarEventos() {
                 
                 <h2>${formatarData(evento.data)} às ${evento.horario}hs</h2>
                 <p><h3>${evento.nome}</h3>
-                <p><strong>Descrição:</strong> ${evento.descricao} </p>
+                <p><strong>Descrição:</strong> ${evento.apelido} </p>
                 <p><strong>Participantes:</strong> ${evento.participantes.join(', ')} </p>
-                
+                <p><strong>Descrição:</strong> ${evento.descricao} </p>
                 <br>
                 <button onclick="window.open('${evento.local}', '_blank')" id="botaoLocal" title="Clique para ver o local do evento">🗺️</button>
                 <button onclick="editarEvento('${id}')" id="botaoEditar" title="Clique para editar">✏️</button>
