@@ -61,21 +61,36 @@ button {
     cursor: pointer;
 }
 
-/* Botão LogOut */
+/* Botões da página de login e dos modais*/
 
-#botaoLogout {
+button.outros {
+    background-color: #D2A8FF;
+    color: #A100FF;
+    cursor: pointer;
+    width: 40%;
+    font: bolder;
+}
+
+button.outros:hover {
+    background-color: #A100FF;
+    color: #D2A8FF;
+}
+
+/* Botão LogOut e Cadastrar apelido */
+
+#botaoLogout, #cadastrarApelido {
     background-color: #D2A8FF;
     color: #A100FF;
     cursor: pointer;
     width: 15%;
 }
 
-#botaoLogout:hover {
+#botaoLogout:hover, #cadastrarApelido:hover {
     background-color: #A100FF;
     color: #D2A8FF;
 }
 
-/* Botão Adicionar Evento */
+/* Botão + */
 
 #botaoAdicionarEvento {
     background-color: #D2A8FF;
@@ -90,7 +105,7 @@ button {
     color: #D2A8FF;
 }
 
-/* Botões Local / Editar / Excluir */
+/* Botões Editar / Excluir / Local */
 
 #botaoEditar, #botaoExcluir, #botaoLocal {
     background-color: #D2A8FF;
@@ -106,6 +121,22 @@ button {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Containers individuais */
 
 .form-container {
@@ -115,6 +146,7 @@ button {
     margin-bottom: 20px;
     width: 100%;
     max-width: 500px;
+    text-align: center;
 }
 
 .event-container {
@@ -123,7 +155,6 @@ button {
     padding: 20px;
     width: 100%;
     max-width: 500px;
-
 }
 
 .event-item {
@@ -166,6 +197,7 @@ button {
     margin: 15% auto;
     width: 90%;
     max-width: 500px;
+    text-align: center;
 }
 
 .modal-content input {
@@ -177,10 +209,12 @@ button {
     box-sizing: border-box;
     color: #2E16FF;
     border-bottom: 2px solid #A100FF;
+
 }
 
+
 .close {
-    color: #E0E0E0;
+    color: #A100FF;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -192,6 +226,15 @@ button {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
 
 /* Campos data e hora */
 .date-time-container {
