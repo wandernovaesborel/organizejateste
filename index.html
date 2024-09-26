@@ -16,20 +16,24 @@
     <div class="container">
         <!-- Container de autenticação -->
         <div id="authContainer" class="form-container">
-            <h1>Login</h1>
+            <h1>Organize Já</h1>
+            <h1>2024</h1>
             <form id="formLogin">
-                <input type="email" id="inputEmail" placeholder="E-mail" required>
-                <input type="password" id="inputSenha" placeholder="Senha" required>
-                <button type="submit">Login</button>
+                <p><input type="email" id="inputEmail" placeholder="E-mail" required></p>
+                <p><input type="password" id="inputSenha" placeholder="Senha" required></p>
+                <p><button type="submit" class="outros">Abrir agenda</button></p>
             </form>
-            <button id="botaoCadastro">Cadastrar Novo Usuário</button>
+            <hr>
+            <button id="botaoCadastro" class="outros">Cadastrar Novo Usuário</button>
+
+            <h1>Copyright © OrganizeJá 2024</h1>
         </div>
 
         <!-- Container de CRUD de eventos -->
         <div id="crudContainer" style="display: none;">
 
             <button id="botaoLogout">Logout</button>
-            <p><button id="cadastrarApelido">Apelido</button></p>
+            <button id="cadastrarApelido">Apelido</button>
             <p><button id="botaoAdicionarEvento">+</button></p>
             <h1>Eventos Pendentes</h1>
 
@@ -40,11 +44,11 @@
     <!-- Modal para Adicionar Apelido -->
     <div id="modalApelido" class="modal">
         <div class="modal-content">
-            <span class="close" id="fecharModal">&times;</span>
+            <span class="close" id="fecharModalApelido">&times;</span>
             <h1>Preencha as informações do evento</h1>
             <form id="formApelidoModal">
                 <input type="text" id="inputApelido" placeholder="Digite seu apelido" required>
-                <button type="submit">Adicionar Apelido</button>
+                <button type="submit" class="outros">Adicionar Apelido</button>
             </form>
         </div>
     </div>
@@ -52,7 +56,7 @@
     <!-- Modal para Adicionar Eventos -->
     <div id="modalAdicionar" class="modal">
         <div class="modal-content">
-            <span class="close" id="fecharModal">&times;</span>
+            <span class="close" id="fecharModalAdicionar">&times;</span>
             <h1>Preencha as informações do evento</h1>
             <form id="formEventoModal">
                 <input type="text" id="inputNome" placeholder="Nome do evento" required>
@@ -70,7 +74,7 @@
                     <option value="Média">Média</option>
                     <option value="Alta">Alta</option>
                 </select>
-                <button type="submit">Adicionar Evento</button>
+                <button type="submit" class="outros">Adicionar Evento</button>
             </form>
         </div>
     </div>
@@ -78,22 +82,26 @@
     <!-- Modal para Edição de Eventos -->
     <div id="modalEdicao" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="fecharModalEdicao">&times;</span>
             <h1>Editar Evento</h1>
             <form id="formEditEvento">
                 <input type="hidden" id="inputEventoId">
                 <input type="text" id="inputEditNome" placeholder="Nome do Evento" required>
                 <input type="text" id="inputEditDescricao" placeholder="Descrição do Evento" required>
-                <input type="date" id="inputEditData" required>
-                <input type="time" id="inputEditHorario" required>
-                <input type="text" id="inputEditLocal" placeholder="Local do Evento" required>
-                <input type="text" id="inputEditParticipantes" placeholder="Participantes (separados por vírgula)">
-                <select id="inputEditPrioridade" name="prioridade">
-                    <option value="Alta">Prioridade Alta</option>
-                    <option value="Média">Prioridade Média</option>
-                    <option value="Baixa">Prioridade Baixa</option>
+                <table width="100%">
+                    <tr>
+                        <td width="50%"><input type="date" id="inputEditData" required></td>
+                        <td width="50%"><input type="time" id="inputEditHorario" required></td>
+                    </tr>
+                </table>
+                <input type="url" id="inputEditLocal" placeholder="Local (URL)" required>
+                <input type="text" id="inputEditParticipantes" placeholder="Participantes (separados por vírgula)" required>
+                <select id="inputEditPrioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
                 </select>
-                <button type="submit">Salvar Alterações</button>
+                <button type="submit" class="outros">Salvar Alterações</button>
             </form>
         </div>
     </div>
